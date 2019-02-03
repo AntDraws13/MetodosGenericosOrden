@@ -64,7 +64,7 @@ public class Arreglo<T extends Comparable<T>> implements Iterable<T>{
         for (int i = 0; i < array.length; i++) {
             pos = i;
             aux=array[i];
-            while ((pos > 0) && (arr[pos-1].compareTo(aux) == 1)) {
+            while ((pos > 0) && (array[pos-1].compareTo(aux) == 1)) {
                 array[pos]= array[pos-1];
                 pos--;
             }
