@@ -40,6 +40,8 @@ public class Main {
                 break;
         }
         System.out.println("\nSeleccione un método de Ordenamiento: \n1.- CocktailSort (Ant & Mónica) ");
+        System.out.println("\n2.- Insertion (Carlos Garfio & Diana Leura) ");
+
         switch (in.nextInt()){
             case 1:
                 long startTime = System.currentTimeMillis();
@@ -47,6 +49,10 @@ public class Main {
                 long duration = System.currentTimeMillis() - startTime;
                 //Print(arreglo);
                 System.out.println("\nEste método tomó: "+duration+ " milisegundos.");
+                break;
+            case 2:
+                duration=arreglo.Insercion();
+                System.out.println("\nEste método tomó: "+(duration)+ " milisegundos.");
                 break;
         }
     }

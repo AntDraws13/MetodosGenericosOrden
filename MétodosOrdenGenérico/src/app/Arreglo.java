@@ -56,7 +56,23 @@ public class Arreglo<T extends Comparable<T>> implements Iterable<T>{
             start = start + 1;
         }
     }
-
+    
+    public long Insercion(){
+        arr= array;
+        int pos;
+        T aux;
+        for (int i = 0; i < arr.length; i++) {
+            pos = i;
+            aux=array[i];
+            while ((pos > 0) && (array[pos-1].compareTo(aux) == 1)) {
+                arr[pos]= array[pos-1];
+                pos--;
+            }
+            arr[pos]=aux;
+        }
+        return System.currentTimeMillis();
+    }
+    
     @Override
     public Iterator<T> iterator() {
         return new Iterator<T>() {
