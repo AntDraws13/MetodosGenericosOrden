@@ -39,32 +39,64 @@ public class Main {
                 Menu();
                 break;
         }
-        System.out.println("\nSeleccione un método de Ordenamiento: \n1.- CocktailSort (Ant & Mónica) ");
-        System.out.println("\n2.- Insertion (Carlos Garfio & Diana Leura) ");
-
+        System.out.println("\nSeleccione un método de Ordenamiento: \n1.- CocktailSort (Ant & Mónica) " +
+                "\n2.- HeapSort (Moreno & Gonzáles) \n3.- InsertionSort (Garfio & Leura) \n4.- ShellSort (Vega & Vidal)" +
+                "\n5.- QuickSort (Iván & Simón)");
+        long startTime, duration;
         switch (in.nextInt()){
             case 1:
-                long startTime = System.currentTimeMillis();
+                startTime = System.currentTimeMillis();
                 arreglo.CocktailSort();
-                long duration = System.currentTimeMillis() - startTime;
-                //Print(arreglo);
+                Print(arreglo);
+                duration = System.currentTimeMillis() - startTime;
                 System.out.println("\nEste método tomó: "+duration+ " milisegundos.");
                 break;
             case 2:
-                duration=arreglo.Insercion();
-                System.out.println("\nEste método tomó: "+(duration)+ " milisegundos.");
+                startTime = System.currentTimeMillis();
+                arreglo.HeapSort();
+                duration = System.currentTimeMillis() - startTime;
+                Print(arreglo);
+                System.out.println("\nEste método tomó: "+duration+ " milisegundos.");
+                break;
+            case 3:
+                startTime = System.currentTimeMillis();
+                arreglo.InsertionSort();
+                duration = System.currentTimeMillis() - startTime;
+                Print(arreglo);
+                System.out.println("\nEste método tomó: "+duration+ " milisegundos.");
+                break;
+            case 4:
+                startTime = System.currentTimeMillis();
+                arreglo.ShellSort();
+                duration = System.currentTimeMillis() - startTime;
+                Print(arreglo);
+                System.out.println("\nEste método tomó: "+duration+ " milisegundos.");
+                break;
+            case 5:
+                startTime = System.currentTimeMillis();
+                arreglo.QuickSort();
+                duration = System.currentTimeMillis() - startTime;
+                Print(arreglo);
+                System.out.println("\nEste método tomó: "+duration+ " milisegundos.");
+                break;
+            default:
                 break;
         }
     }
 
     public static void Print(Arreglo arreglo){
-        System.out.println("\nArreglo desordenado: ");
-        for (Object o : arreglo.getArr()){
-            System.out.println(o);
+
+
+        System.out.println("\nArreglo Desordenado: ");
+        for (Object o: arreglo.getUnOrderedArr()){
+            System.out.print(o+", ");
         }
-        System.out.println("\nArreglo ordenado");
-        for (Object o : arreglo){
-            System.out.println(o);
+        System.out.println();
+
+
+        System.out.println("Arreglo Ordenado");
+        for (Object e: arreglo.getArr()){
+            System.out.print(e+", ");
         }
     }
 
