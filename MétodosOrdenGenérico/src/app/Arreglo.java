@@ -3,8 +3,8 @@ package app;
 import java.util.Iterator;
 
 public class Arreglo<T extends Comparable<T>> implements Iterable<T>{
-    T[] arr;
-    T[] array;
+    T[] arr; //Arreglo a utilizar
+    T[] array; //Copia del arreglo
     int size;
 
     public Arreglo(T[] arr) {
@@ -22,7 +22,7 @@ public class Arreglo<T extends Comparable<T>> implements Iterable<T>{
     }
 
     public void CocktailSort(){
-        arr = array;
+        arr = array; //Cada que inicie un método necesitamos hacer que arr sea igual a su estado inicial (la copia del mismo) 
         boolean swapped = true;
         int start = 0;
         int end = size;
