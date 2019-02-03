@@ -22,6 +22,7 @@ public class Arreglo<T extends Comparable<T>> implements Iterable<T>{
     }
 
     public void CocktailSort(){
+        arr = array;
         boolean swapped = true;
         int start = 0;
         int end = size;
