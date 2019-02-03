@@ -30,7 +30,7 @@ public class Main {
                 break;
             case 2:
                 aDouble = new Double[lenght];
-                fillDouble(0, 100);
+                fillDouble(0, 1000);
                 arreglo = new Arreglo(aDouble);
                 break;
             case 3:
@@ -42,10 +42,12 @@ public class Main {
                 Menu();
                 break;
         }
-        System.out.println("\nSeleccione un método de Ordenamiento: \n1.- CocktailSort (Ant & Mónica) " +
+        System.out.println("" +
+                "\nSeleccione un método de Ordenamiento: \n1.- CocktailSort (Ant & Mónica) " +
                 "\n2.- HeapSort (Moreno & Gonzáles) \n3.- InsertionSort (Garfio & Leura) \n4.- ShellSort (Vega & Vidal)" +
                 "\n5.- QuickSort (Iván & Simón) \n6.- CombSort (Cristian & Leo) \n7.- GnomeSort (Meza & Arriaga) " +
-                "\n8.- MergeSort (Juárez & López) \n9.- CycleSort (Richie & Picasso) \n10.- Ejecutar todos");
+                "\n8.- MergeSort (Juárez & López) \n9.- CycleSort (Richie & Picasso)\n10.- PancakeSort (Frías & Victor) " +
+                "\n11.- Ejecutar todos");
         switch (in.nextInt()) {
             case 1:
                 startTime = System.currentTimeMillis();
@@ -111,6 +113,13 @@ public class Main {
                 System.out.println("\nEste método tomó: " + duration + " milisegundos.");
                 break;
             case 10:
+                startTime = System.currentTimeMillis();
+                arreglo.PancakeSort();
+                duration = System.currentTimeMillis() - startTime;
+                Print(arreglo);
+                System.out.println("\nEste método tomó: " + duration + " milisegundos.");
+                break;
+            case 11:
                 DoAll();
                 break;
             default:
@@ -171,6 +180,12 @@ public class Main {
         System.out.println("\nCycleSort (Richie & Picasso)");
         startTime = System.currentTimeMillis();
         arreglo.CycleSort();
+        duration = System.currentTimeMillis() - startTime;
+        System.out.println("Este método tomó: " + duration + " milisegundos.");
+
+        System.out.println("\nPanCakeSort (Frías & Víctor)");
+        startTime = System.currentTimeMillis();
+        arreglo.PancakeSort();
         duration = System.currentTimeMillis() - startTime;
         System.out.println("Este método tomó: " + duration + " milisegundos.");
 

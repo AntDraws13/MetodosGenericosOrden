@@ -284,4 +284,38 @@ public class Arreglo<T extends Comparable<T>> {
             }
         }
     }
+
+    private void flip(int i) {
+        T temp;
+        int start = 0;
+        while (start < i)
+        {
+            temp = arr[start];
+            arr[start] = arr[i];
+            arr[i] = temp;
+            start++;
+            i--;
+        }
+    }
+
+    private int findMax(int n) {
+        int mi, i;
+        for (mi = 0, i = 0; i < n; ++i)
+            if (arr[i].compareTo(arr[mi]) > 0)
+                mi = i;
+        return mi;
+    }
+
+    public void PancakeSort() {
+        for (int curr_size = size; curr_size > 1; --curr_size)
+        {
+            int mi = findMax(curr_size);
+            if (mi != curr_size-1)
+            {
+                flip(mi);
+                flip(curr_size-1);
+            }
+        }
+    }
+
 }
